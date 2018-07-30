@@ -13,4 +13,6 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
     <color name="colorAccent">#2a1aDD</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
