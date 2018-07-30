@@ -1,11 +1,14 @@
 package sample.app
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import kotlin.app.R
 import kotlinx.android.synthetic.main.activity_loading.*
+import java.util.*
+import kotlin.concurrent.schedule
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -60,6 +63,19 @@ class LoadingActivity : AppCompatActivity() {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         dummy_button.setOnTouchListener(mDelayHideTouchListener)
+
+//        Handler().postDelayed({
+//
+//        }, OPEN_MAIN_ACTIVITY_DELAY.toLong())
+
+        Timer().schedule(OPEN_MAIN_ACTIVITY_DELAY.toLong()){
+            val intent = Intent(this@LoadingActivity, LoginActivity::class.java)
+            // To pass any data to next activity
+            // intent.putExtra("keyIdentifier", value)
+            // start your next activity
+            startActivity(intent)
+        }
+
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -129,5 +145,7 @@ class LoadingActivity : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+
+        private val OPEN_MAIN_ACTIVITY_DELAY = 2000
     }
 }

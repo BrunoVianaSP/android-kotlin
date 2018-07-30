@@ -30,8 +30,8 @@
             android:theme="@style/AppTheme1" />
         <activity
             android:name="sample.app.LoginActivity"
-            android:label="@string/title_activity_loading"
-            android:theme="@style/AppTheme1" />
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme1.NoActionBar" />
         <activity
             android:name="sample.app.MainActivity"
             android:label="@string/title_activity_login" />
